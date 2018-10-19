@@ -628,6 +628,7 @@ void AddRowToExcel(TStringGrid *SG1, int nRow, Variant vSheet, TMemo *Memo)
 
 void __fastcall TForm1::Button6Click(TObject *Sender)
 {
+    /*
     ExcelInfo eFile = ExcelInfo("D:\\C++\\Edalgo.xlsx", false);
     Variant vSheet = eFile.GetSheet(StrToInt(LabeledEdit2->Text));
 
@@ -640,6 +641,7 @@ void __fastcall TForm1::Button6Click(TObject *Sender)
 
     eFile.SaveFile();
     eFile.CloseExFile();
+    */
 }
 //---------------------------------------------------------------------------
 

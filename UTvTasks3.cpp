@@ -515,3 +515,14 @@ void __fastcall TForm3::Button10Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm3::Button11Click(TObject *Sender)
+{
+    AnsiString sNewStreet;
+    for(int i=0; i<=Memo1->Lines->Count; i++)
+    {
+        sNewStreet = Memo1->Lines->Strings[i];
+        Form1->DBMan1.AddStreet(sNewStreet, ComboBox1->Text);
+    }
+}
+//---------------------------------------------------------------------------
+

@@ -348,7 +348,7 @@ object Form1: TForm1
     Width = 114
     Height = 13
     Anchors = [akLeft, akBottom]
-    Caption = 'v6.2(c) Osipov, 04.2018'
+    Caption = 'v6.3(c) Osipov, 10.2018'
   end
   object Label4: TLabel
     Left = 216
@@ -683,7 +683,7 @@ object Form1: TForm1
     Caption = #1056#1040#1049#1054#1053
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
     ParentFont = False
