@@ -194,7 +194,7 @@ int DBManager::GetMaxID(AnsiString sTabName)
 {
     Client.SendCommand("select max(id) from " + sTabName);
     AnsiString str = Client.GetFieldValue();
-    if(str != "")
+    if(str != "" && str != " ")
         return StrToInt(str);
     else
         return 0;
@@ -560,6 +560,37 @@ void DBManager::SearchForNewTasks(TMemo *Memo)
     }
 }
 //------------------------------------------------------------------------------
+void DBManager::LastTaskInRegion(int nRegID)
+{
+    AnsiString sTabName = TasksTabName(IntToStr(nRegID));
+    int nMaxID = GetMaxID(sTabName);
+    Client.SendCommand("select * from " + sTabName + " where id = " + IntToStr(nMaxID));
+    AddSearchResultsToResults();
+}
+//------------------------------------------------------------------------------
+void DBManager::LastTasks(TMemo *Memo)
+{
+    AnsiString sRegName;
+    int nMaxReg = GetMaxID("regions");
+    for(int i=1; i <= nMaxReg; i++)
+    {
+        srResults.Clear();
+        LastTaskInRegion(i);
+        if(srResults.Results.size()>0)
+        {
+            Client.SendCommand("select name from regions where id = " + IntToStr(i));
+            sRegName = Client.GetFieldValue();
+            Memo->Lines->Add(sRegName);
+            srResults.Show(Memo);
+            Memo->Lines->Add("");
+            Memo->Lines->Add("");
+        }
+    }
+}
+//------------------------------------------------------------------------------
+
+
+
 
 
 

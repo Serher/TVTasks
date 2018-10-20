@@ -86,44 +86,49 @@ void __fastcall TForm3::Button2Click(TObject *Sender) //Новые заявки
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Button5Click(TObject *Sender) //Последние заявки
 {
-    if(Form1->mysql->Checked)// при работе версии с MySQL эта часть не нужна
-        return;
-
-    Variant vApp = InitApp();
-    Variant vBook = GetWorkBook(vApp, true);
-    Variant vSheet;// = GetBaseSheet(vBook);
-    int i, nFirstLine, nLastLine, nSheetNumber;
-    int nSheetCount = GetSheetsCount(vBook);
-    for(nSheetNumber = 1; nSheetNumber<=nSheetCount; nSheetNumber++)
+    if(!Form1->mysql->Checked)
     {
-        vSheet = GetSheet(vBook, nSheetNumber);
-        i=1;
-        nFirstLine = 1;
-        nLastLine = 1;
-        do{
-            if(VarToStr(GetCell(vSheet, i, 11)) == "+")
-            {
-                if(nFirstLine == 1)
-                    nFirstLine = i;
-                else if(nFirstLine != nLastLine)
-                    nFirstLine = nLastLine;
-                nLastLine = i;
-            }
-            i++;
-        }while(VarToStr(GetCell(vSheet, i, 1)) != "");
+        Variant vApp = InitApp();
+        Variant vBook = GetWorkBook(vApp, true);
+        Variant vSheet;// = GetBaseSheet(vBook);
+        int i, nFirstLine, nLastLine, nSheetNumber;
+        int nSheetCount = GetSheetsCount(vBook);
+        for(nSheetNumber = 1; nSheetNumber<=nSheetCount; nSheetNumber++)
+        {
+            vSheet = GetSheet(vBook, nSheetNumber);
+            i=1;
+            nFirstLine = 1;
+            nLastLine = 1;
+            do{
+                if(VarToStr(GetCell(vSheet, i, 11)) == "+")
+                {
+                    if(nFirstLine == 1)
+                        nFirstLine = i;
+                    else if(nFirstLine != nLastLine)
+                        nFirstLine = nLastLine;
+                    nLastLine = i;
+                }
+                i++;
+            }while(VarToStr(GetCell(vSheet, i, 1)) != "");
 
-        Memo1->Lines->Add(vSheet.OlePropertyGet("Name"));
-        nFirstLine++;
-        for(nFirstLine; nFirstLine<=nLastLine; nFirstLine++)
-            Memo1->Lines->Add(PackEntry(vSheet, nFirstLine, true));
+            Memo1->Lines->Add(vSheet.OlePropertyGet("Name"));
+            nFirstLine++;
+            for(nFirstLine; nFirstLine<=nLastLine; nFirstLine++)
+                Memo1->Lines->Add(PackEntry(vSheet, nFirstLine, true));
 
-        Memo1->Lines->Add("");
-        Memo1->Lines->Add("");
+            Memo1->Lines->Add("");
+            Memo1->Lines->Add("");
+        }
+        CloseExFile(vApp);
+
+        if(Memo1->Lines->Strings[0] == "")
+            Memo1->Lines->Add("Заявок нет.");
     }
-    CloseExFile(vApp);
-
-    if(Memo1->Lines->Strings[0] == "")
-        Memo1->Lines->Add("Заявок нет.");
+    else // v5.0
+    {
+        Memo1->Clear();
+        Form1->DBMan1.LastTasks(Memo1);
+    }
 }
 //---------------------------------------------------------------------------
 
@@ -515,14 +520,4 @@ void __fastcall TForm3::Button10Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm3::Button11Click(TObject *Sender)
-{
-    AnsiString sNewStreet;
-    for(int i=0; i<=Memo1->Lines->Count; i++)
-    {
-        sNewStreet = Memo1->Lines->Strings[i];
-        Form1->DBMan1.AddStreet(sNewStreet, ComboBox1->Text);
-    }
-}
-//---------------------------------------------------------------------------
 

@@ -112,6 +112,9 @@ class DBManager
     // Search for new tasks
     void SearchForNewTasks(TMemo *Memo);
     void SearchForNewTasksInRegion(int nRegID);
+    // Search for last tasks
+    void LastTaskInRegion(int nRegID);
+    void LastTasks(TMemo *Memo);
 
 
     // Load

@@ -59,7 +59,6 @@ __published:	// IDE-managed Components
     void __fastcall Button9Click(TObject *Sender);
     void __fastcall FormActivate(TObject *Sender);
     void __fastcall Button10Click(TObject *Sender);
-    void __fastcall Button11Click(TObject *Sender);
     
     
 
