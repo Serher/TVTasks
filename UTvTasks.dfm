@@ -805,6 +805,15 @@ object Form1: TForm1
     Visible = False
     OnClick = Button6Click
   end
+  object CB2: TComboBox
+    Left = 360
+    Top = 320
+    Width = 73
+    Height = 21
+    Style = csDropDownList
+    ItemHeight = 13
+    TabOrder = 26
+  end
   object Timer1: TTimer
     Interval = 60000
     OnTimer = Timer1Timer

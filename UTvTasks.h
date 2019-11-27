@@ -136,6 +136,7 @@ __published:	// IDE-managed Components
     TCheckBox *mysql;
     TButton *Button5;
     TButton *Button6;
+    TComboBox *CB2;
 
     void __fastcall LabeledEdit2Exit(TObject *Sender);
     void __fastcall LabeledEdit3Exit(TObject *Sender);

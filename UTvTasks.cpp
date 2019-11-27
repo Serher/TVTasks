@@ -459,6 +459,12 @@ void __fastcall TForm1::RadioGroup1Click(TObject *Sender)
     int nCurrentID = RadioGroup1->ItemIndex;
     if(nOldID != nCurrentID)
     {
+        ComboBox1->ItemIndex = -1;
+        LabeledEdit2->Clear();
+        CB2->Clear();
+        CB2->ItemIndex = -1;
+        LabeledEdit3->Clear();
+
         if(!mysql->Checked)
         {
             StreetLocalBase->Lines->Strings[0] = IntToStr(nCurrentID);
