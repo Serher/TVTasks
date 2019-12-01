@@ -429,6 +429,9 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ComboBox1Exit(TObject *Sender)
 {
+    AnsiString sHouses;
+    StringsContainer strCont;
+
     int nSupposedStrID;
     AnsiString sText = ComboBox1->Text;
     if(sText != "")
@@ -448,7 +451,29 @@ void __fastcall TForm1::ComboBox1Exit(TObject *Sender)
         if(!mysql->Checked)
             RadioGroup1->ItemIndex = GetRegionFromStreet(StreetLocalBase, sText);
         else // v5.0
+        {
             RadioGroup1->ItemIndex = RadioGroup1->Items->IndexOf(DBMan1.GetRegionFromStreet(sText));
+            LabeledEdit2->Clear();
+            CB2->Clear();
+            CB2->ItemIndex = -1;
+            AnsiString sHouses = DBMan1.GetHouses(ComboBox1->Text);
+            if(sHouses == "" || sHouses == " ")
+            {
+                CB2->Enabled = false;
+                LabeledEdit2->Enabled = true;
+            }
+            else
+            {
+                CB2->Enabled = true;
+                LabeledEdit2->Enabled = false;
+
+                strCont.BreakString(sHouses, "; ");
+                for(int i=0; i<strCont.Vector.size(); i++)
+                    CB2->Items->Add(strCont.Vector[i]);
+
+                CB2->SetFocus();
+            }
+        }
     }
 }
 //---------------------------------------------------------------------------
@@ -648,6 +673,12 @@ void __fastcall TForm1::Button6Click(TObject *Sender)
     eFile.SaveFile();
     eFile.CloseExFile();
     */
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CB2Select(TObject *Sender)
+{
+    LabeledEdit2->Text = CB2->Text;    
 }
 //---------------------------------------------------------------------------
 

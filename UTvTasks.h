@@ -26,7 +26,7 @@
 #include "VariantFuncs.h"
 
 const AnsiString VERSION_FILE = "4_4.txt";
-const AnsiString CURRENT_VERSION = "6.0";
+const AnsiString CURRENT_VERSION = "6.4";
 
 
 //---------------------------------------------------------------------------
@@ -155,6 +155,7 @@ __published:	// IDE-managed Components
     void __fastcall OFFTimer(TObject *Sender);
     void __fastcall Button5Click(TObject *Sender);
     void __fastcall Button6Click(TObject *Sender);
+    void __fastcall CB2Select(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

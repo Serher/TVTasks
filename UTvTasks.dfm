@@ -348,7 +348,7 @@ object Form1: TForm1
     Width = 114
     Height = 13
     Anchors = [akLeft, akBottom]
-    Caption = 'v6.3(c) Osipov, 10.2018'
+    Caption = 'v6.4(c) Osipov, 12.2019'
   end
   object Label4: TLabel
     Left = 216
@@ -375,6 +375,17 @@ object Form1: TForm1
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
     ParentFont = False
+  end
+  object CB2: TComboBox
+    Left = 360
+    Top = 320
+    Width = 81
+    Height = 21
+    Style = csDropDownList
+    Enabled = False
+    ItemHeight = 13
+    TabOrder = 26
+    OnSelect = CB2Select
   end
   object SG2: TStringGrid
     Left = 760
@@ -804,15 +815,6 @@ object Form1: TForm1
     TabOrder = 25
     Visible = False
     OnClick = Button6Click
-  end
-  object CB2: TComboBox
-    Left = 360
-    Top = 320
-    Width = 73
-    Height = 21
-    Style = csDropDownList
-    ItemHeight = 13
-    TabOrder = 26
   end
   object Timer1: TTimer
     Interval = 60000

@@ -616,3 +616,9 @@ void DBManager::LoadStreets(TStrings *Strings, AnsiString sRegion)
         Strings->Add(Client.SG->Cells[0][nY]);
 }
 //------------------------------------------------------------------------------
+AnsiString DBManager::GetHouses(AnsiString sStreet)
+{
+    Client.SendCommand("select houses from streets where name like '" + sStreet + "'");
+return Client.GetFieldValue();
+}
+//------------------------------------------------------------------------------

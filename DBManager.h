@@ -120,6 +120,7 @@ class DBManager
     // Load
     void LoadRegions(TStrings *Strings);
     void LoadStreets(TStrings *Strings, AnsiString sRegion = "");
+    AnsiString GetHouses(AnsiString sStreet);
 
 };
 //------------------------------------------------------------------------------
