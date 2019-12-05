@@ -348,7 +348,7 @@ object Form1: TForm1
     Width = 114
     Height = 13
     Anchors = [akLeft, akBottom]
-    Caption = 'v6.4(c) Osipov, 12.2019'
+    Caption = 'v6.5(c) Osipov, 12.2019'
   end
   object Label4: TLabel
     Left = 216
@@ -384,6 +384,7 @@ object Form1: TForm1
     Style = csDropDownList
     Enabled = False
     ItemHeight = 13
+    Sorted = True
     TabOrder = 26
     OnSelect = CB2Select
   end
