@@ -478,8 +478,6 @@ void SearchProcess(AnsiString sHouse, TForm1 *Form1, AnsiString sFlat = "", Ansi
 int CheckExistingStr(AnsiString sText, TComboBox *ComboBox)
 {   
     int i=0;
-    char *temp;
-
     AnsiString str = ComboBox->Items->Strings[i];
     while(str !="")
     {

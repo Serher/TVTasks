@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 193
-  Top = 127
+  Left = 240
+  Top = 136
   BorderStyle = bsSingle
   Caption = #1047#1072#1076#1072#1095#1080' '#1087#1086' '#1101#1092#1080#1088#1085#1086#1084#1091' '#1090#1077#1083#1077#1074#1080#1076#1077#1085#1080#1102
   ClientHeight = 791
@@ -348,7 +348,7 @@ object Form1: TForm1
     Width = 114
     Height = 13
     Anchors = [akLeft, akBottom]
-    Caption = 'v6.5(c) Osipov, 12.2019'
+    Caption = 'v6.5(c) Osipov, 02.2020'
   end
   object Label4: TLabel
     Left = 216
@@ -385,7 +385,8 @@ object Form1: TForm1
     Enabled = False
     ItemHeight = 13
     Sorted = True
-    TabOrder = 26
+    TabOrder = 2
+    TabStop = False
     OnSelect = CB2Select
   end
   object SG2: TStringGrid
@@ -397,7 +398,7 @@ object Form1: TForm1
     FixedCols = 0
     RowCount = 2
     FixedRows = 0
-    TabOrder = 22
+    TabOrder = 23
     Visible = False
   end
   object Memo3: TMemo
@@ -406,7 +407,7 @@ object Form1: TForm1
     Width = 889
     Height = 49
     ScrollBars = ssVertical
-    TabOrder = 21
+    TabOrder = 22
   end
   object mysql: TCheckBox
     Left = 192
@@ -417,7 +418,7 @@ object Form1: TForm1
     Checked = True
     Enabled = False
     State = cbChecked
-    TabOrder = 23
+    TabOrder = 24
   end
   object SG1: TStringGrid
     Left = 16
@@ -435,7 +436,7 @@ object Form1: TForm1
     Font.Style = []
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
     ParentFont = False
-    TabOrder = 19
+    TabOrder = 20
     OnDblClick = SG1DblClick
     ColWidths = (
       43
@@ -462,7 +463,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     ScrollBars = ssVertical
-    TabOrder = 18
+    TabOrder = 19
   end
   object LabeledEdit2: TLabeledEdit
     Left = 216
@@ -511,7 +512,7 @@ object Form1: TForm1
     LabelPosition = lpAbove
     LabelSpacing = 3
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 3
     OnExit = LabeledEdit3Exit
   end
   object LabeledEdit4: TLabeledEdit
@@ -536,7 +537,7 @@ object Form1: TForm1
     LabelPosition = lpAbove
     LabelSpacing = 3
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 4
   end
   object LabeledEdit5: TLabeledEdit
     Left = 448
@@ -560,7 +561,7 @@ object Form1: TForm1
     LabelPosition = lpAbove
     LabelSpacing = 3
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 6
   end
   object Memo1: TMemo
     Left = 448
@@ -573,7 +574,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 5
   end
   object Memo2: TMemo
     Left = 16
@@ -590,7 +591,7 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     ReadOnly = True
-    TabOrder = 8
+    TabOrder = 9
   end
   object BitBtn1: TBitBtn
     Left = 448
@@ -604,7 +605,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 8
     OnClick = BitBtn1Click
     Kind = bkOK
   end
@@ -620,7 +621,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 7
     OnClick = BitBtn2Click
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
@@ -653,7 +654,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     ScrollBars = ssBoth
-    TabOrder = 9
+    TabOrder = 10
     Visible = False
   end
   object Memo5: TMemo
@@ -668,7 +669,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     ScrollBars = ssBoth
-    TabOrder = 10
+    TabOrder = 11
     Visible = False
   end
   object ComboBox1: TComboBox
@@ -699,7 +700,7 @@ object Form1: TForm1
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 11
+    TabOrder = 12
     OnClick = RadioGroup1Click
   end
   object StreetLocalBase: TMemo
@@ -710,7 +711,7 @@ object Form1: TForm1
     Lines.Strings = (
       '-1')
     ScrollBars = ssBoth
-    TabOrder = 12
+    TabOrder = 13
     Visible = False
   end
   object Button1: TButton
@@ -719,7 +720,7 @@ object Form1: TForm1
     Width = 89
     Height = 17
     Caption = #1059#1087#1088#1072#1074#1083#1077#1085#1080#1077
-    TabOrder = 13
+    TabOrder = 14
     TabStop = False
     OnClick = Button1Click
   end
@@ -734,7 +735,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 14
+    TabOrder = 15
   end
   object Button2: TButton
     Left = 568
@@ -742,7 +743,7 @@ object Form1: TForm1
     Width = 25
     Height = 25
     Caption = '-->'
-    TabOrder = 15
+    TabOrder = 16
     OnClick = Button2Click
   end
   object Button3: TButton
@@ -751,7 +752,7 @@ object Form1: TForm1
     Width = 137
     Height = 17
     Caption = #1058#1077#1083#1077#1092#1086#1085#1099' '#1084#1072#1089#1090#1077#1088#1086#1074
-    TabOrder = 16
+    TabOrder = 17
     OnClick = Button3Click
   end
   object Pan2: TPanel
@@ -760,7 +761,7 @@ object Form1: TForm1
     Width = 33
     Height = 33
     Color = clBtnText
-    TabOrder = 20
+    TabOrder = 21
     Visible = False
     object Button4: TButton
       Left = 72
@@ -787,7 +788,7 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Base filler'
-    TabOrder = 24
+    TabOrder = 25
     Visible = False
     OnClick = Button5Click
   end
@@ -804,7 +805,7 @@ object Form1: TForm1
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 17
+    TabOrder = 18
     Visible = False
   end
   object Button6: TButton
@@ -813,7 +814,7 @@ object Form1: TForm1
     Width = 115
     Height = 25
     Caption = 'Button6'
-    TabOrder = 25
+    TabOrder = 26
     Visible = False
     OnClick = Button6Click
   end

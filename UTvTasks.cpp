@@ -480,16 +480,12 @@ void __fastcall TForm1::ComboBox1Exit(TObject *Sender)
 
 void __fastcall TForm1::RadioGroup1Click(TObject *Sender)
 {
+    AnsiString sText;
+    int nSupposedStrID;
     int nOldID = GetRegionSelected(StreetLocalBase);
     int nCurrentID = RadioGroup1->ItemIndex;
     if(nOldID != nCurrentID)
     {
-        ComboBox1->ItemIndex = -1;
-        LabeledEdit2->Clear();
-        CB2->Clear();
-        CB2->ItemIndex = -1;
-        LabeledEdit3->Clear();
-
         if(!mysql->Checked)
         {
             StreetLocalBase->Lines->Strings[0] = IntToStr(nCurrentID);
@@ -498,6 +494,18 @@ void __fastcall TForm1::RadioGroup1Click(TObject *Sender)
         else // v5.0
         {
             DBMan1.LoadStreets(ComboBox1->Items, RadioGroup1->Items->Strings[nCurrentID]);
+        }
+
+        sText = ComboBox1->Text;
+        nSupposedStrID = CheckExistingStr(sText, ComboBox1);
+        if(nSupposedStrID<0)
+        {
+            ComboBox1->ItemIndex = -1;
+            ComboBox1->Text = "";
+            LabeledEdit2->Clear();
+            CB2->Clear();
+            CB2->ItemIndex = -1;
+            LabeledEdit3->Clear();
         }
     }
 }
